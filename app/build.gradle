@@ -45,6 +45,31 @@ dependencies {
     //implementation project(':caresensOriginalSdk')
 }
 
+def getGroupId = { ->
+    return "com.github.ntq-trungngo" // Replace with version Name
+}
+
+def getArtifactId = { ->
+    return "diabetes-caresen" // Replace with library name ID
+}
+
+def getVersionName = { ->
+    return "0.0.1" // Replace with library name ID
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = getGroupId
+                artifactId = getArtifactId
+                version = getVersionName
+                artifact  ("$buildDir/outputs/aar/${getArtifactId()}-release.aar")
+            }
+        }
+    }
+}
 //afterEvaluate {
 //    publishing {
 //        publications {

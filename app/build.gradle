@@ -46,7 +46,7 @@ dependencies {
 }
 
 def getGroupId = { ->
-    return "com.github.ntq-trungngo" // Replace with version Name
+    return "com.github.TrungNgo-NTQ" // Replace with version Name
 }
 
 def getArtifactId = { ->

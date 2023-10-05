@@ -4,6 +4,7 @@ apply plugin: 'maven-publish'
 repositories {
     google()
     jcenter()
+    mavenCentral()
 }
 
 android {
@@ -20,8 +21,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    productFlavors {
-    }
+
     lintOptions {
         checkReleaseBuilds false
         // Or, if you prefer, you can continue to check for errors in release builds,
@@ -30,27 +30,14 @@ android {
     }
 }
 
-def getGroupId = { ->
-    return "com.github.TrungNgo-NTQ" // Replace with version Name
-}
-
-def getArtifactId = { ->
-    return "original-caresen" // Replace with library name ID
-}
-
-def getVersionName = { ->
-    return "0.0.1" // Replace with library name ID
-}
-
-
 afterEvaluate {
     publishing {
         publications {
             release(MavenPublication) {
                 from components.release
-                groupId = getGroupId
-                artifactId = getArtifactId
-                version = getVersionName
+                groupId = "com.github.TrungNgo-NTQ"
+                artifactId = "originalcaresen"
+                version = "0.0.1"
             }
         }
     }

@@ -1,4 +1,4 @@
-package net.huray.caresens
+package net.huray.ble
 
 import android.content.ComponentName
 import android.content.Context
@@ -12,6 +12,9 @@ import android.util.SparseArray
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.util.forEach
+import net.huray.ble.databinding.ActivityMainBinding
+import net.huray.caresens.CaresensBluetoothService
+import net.huray.caresens.DeviceAdapter
 import net.huray.caresens.ble.Const
 import net.huray.caresens.ble.ExtendedDevice
 import net.huray.caresens.ble.GlucoseRecord
@@ -19,7 +22,6 @@ import net.huray.caresens.callbacks.BluetoothConnectionCallbacks
 import net.huray.caresens.callbacks.BluetoothDataCallbacks
 import net.huray.caresens.callbacks.BluetoothScanCallbacks
 import net.huray.caresens.data.DeviceInfo
-import net.huray.caresens.databinding.ActivityMainBinding
 import net.huray.caresens.enums.ConnectState
 import net.huray.caresens.enums.DataReadState
 import net.huray.caresens.enums.GlucoseUnit

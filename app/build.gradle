@@ -7,14 +7,11 @@ android {
     compileSdk 33
 
     defaultConfig {
+        applicationId "net.huray.caresens"
         minSdk 24
         targetSdk 33
         versionCode 1
         versionName "1.0"
-    }
-
-    viewBinding {
-        enabled true
     }
 
     buildTypes {
@@ -28,6 +25,10 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding true
     }
 }
 

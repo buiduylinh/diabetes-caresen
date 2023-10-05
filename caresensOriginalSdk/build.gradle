@@ -47,10 +47,10 @@ afterEvaluate {
     publishing {
         publications {
             release(MavenPublication) {
+                from components.release
                 groupId = getGroupId
                 artifactId = getArtifactId
                 version = getVersionName
-                artifact  ("$buildDir/outputs/aar/${getArtifactId()}-release.aar")
             }
         }
     }

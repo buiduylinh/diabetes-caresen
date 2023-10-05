@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
 
 repositories {
     google()
@@ -26,6 +27,32 @@ android {
         // Or, if you prefer, you can continue to check for errors in release builds,
         // but continue the build even when errors are found:
         abortOnError false
+    }
+}
+
+def getGroupId = { ->
+    return "com.github.TrungNgo-NTQ" // Replace with version Name
+}
+
+def getArtifactId = { ->
+    return "original-caresen" // Replace with library name ID
+}
+
+def getVersionName = { ->
+    return "0.0.1" // Replace with library name ID
+}
+
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                groupId = getGroupId
+                artifactId = getArtifactId
+                version = getVersionName
+                artifact  ("$buildDir/outputs/aar/${getArtifactId()}-release.aar")
+            }
+        }
     }
 }
 

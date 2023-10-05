@@ -2,8 +2,10 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://jitpack.io' }
         jcenter() // Warning: this repository is going to shut down soon
     }
 }
 rootProject.name = "caresens"
-include ':app', ':caresensOriginalSdk'
+include ':app'
+include ':caresens'
